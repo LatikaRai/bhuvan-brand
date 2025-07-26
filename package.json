@@ -1,6 +1,6 @@
 {
-  "name": "raised-right",
-  "private": true,
+  "name": "bhuvan-brand",
+  "homepage": "https://LatikaRai.github.io/bhuvan-brand",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -8,6 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "vite"
   },
   "dependencies": {
