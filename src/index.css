@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url(./fonts/BebasNeue-Regular.otf);
+}
+@font-face {
+  font-family: "Coolvetica";
+  src: url(./fonts/Coolvetica-Rg.otf);
+}
+@font-face {
+  font-family: "Evogria";
+  src: url(./fonts/Evogria.otf);
+}
+@font-face {
+  font-family: "Highrise";
+  src: url(./fonts/HighriseFont-Bold-Demo.otf);
+}
+@font-face {
+  font-family: "Mortend";
+  src: url(./fonts/MortendBold.otf);
+}
+
+.home-section .brand-name {
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 45vh;
+}
+
+.model-cont .model-1{
+  width: 50%;
+  height: 100%;
+  background: url(./public/images/bbHome.png) no-repeat center center;
+  background-size: cover;
+
+}
+.marq-section::-webkit-scrollbar {
+  display: none;
+}
+.marq-section .moving-txt{
+  font-family: 'Evogria';
+  animation: move;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #121212;
+  margin: 1vw 1.5vw;
+}
+
+@keyframes move {
+  from {
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-100%);
+  }
+}
+.para-cont{
+  padding: 5vw;
+}
+.collection-section{
+  padding: 5vw;
+}
+.collection-section h2{
+  padding: 2vw;
+  margin-bottom: 2vw;
+}
+nav{
+  padding: 1vw 1.5vw;
+}
+.ryt{
+  padding: 1vw 1.5vw;
+}
+.menu-section {
+  padding: 2vw;
+}
+.menu-section .close{
+  padding: 0.6vw 1.4vw;
+}
+@layer utilities {
+  .brand-links a {
+    position: relative;
+    display: inline-block;
+    --underline-scale: 0;
+  }
+
+  .brand-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.1em;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(var(--underline-scale));
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .img-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .img-bg.fading::after {
+    opacity: 1;
+  }
+
+  .img-bg.home-bg {
+    background-image: url('https://youthiapa.com/cdn/shop/files/WhatsApp_Image_2025-07-15_at_20.27.58.jpg?v=1752603412&width=720');
+  }
+
+  .img-bg.collections-bg {
+    background-image: url('https://youthiapa.com/cdn/shop/files/1_85f9448b-9edb-4ea0-b8db-ade741d9e9fc.jpg?v=1749984626&width=660');
+  }
+
+  .img-bg.raised-bg {
+    background-image: url('https://youthiapa.com/cdn/shop/files/4_84d982b1-46be-4041-81e7-921e72253fe7.jpg?v=1749384246&width=660');
+  }
+
+  .img-bg.story-bg {
+    background-image: url('https://youthiapa.com/cdn/shop/files/bb-modified.jpg?v=1750000289&width=1100');
+  }
+}
+.bestsellers{
+  padding: 0 4vw;
+}
+.bestsellers h1{
+  font-family: 'Highrise', sans-serif;
+  word-spacing: 0.5vw;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+}
+.best-cloths{
+  padding: 0 2vw;
+}
+.cloth-desc{
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(5px);
+  padding: 0 1.5vw;
+  border-radius: 10px;
+}
+.about-section h1{
+  font-family: 'Coolvetica', sans-serif;
+}
+.about-section{
+  font-family: 'Coolvetica', sans-serif;
+}
+.footer h1{
+  font-family: 'Bebas Neue', sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .model-cont .model-1 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    margin-bottom: 150%;
+  }
+  
+  .home-section .brand-name {
+    font-size: 10vw;
+    width: 100%;
+    text-align: center;
+    color : #fff;
+    position: relative;
+  }
+
+  .para-cont, .collection-section, .bestsellers, .about-section {
+    padding: 2vw;
+  }
+
+  nav {
+    padding: 3vw;
+  }
+
+  .ryt {
+    padding: 1vw;
+  }
+  .ryt h4{
+    font-size: 2.5vw;
+  }
+  .menu-section {
+    padding: 3vw;
+  }
+  .menu-section .close {
+    padding: 1vw 2vw;
+    font-size: 2vw;
+  }
+  .menu-section .img-cont{
+    height: 50vh;
+  }
+  .cloth-item{
+    width: 50%;
+    height: 40vh;
+  }
+  .cloth-item h4 {
+    font-size: 2.5vw;
+  }
+  .cloth-item h5 {
+    font-size: 2vw;
+  }
+  .para-cont  {
+    padding: 0 4vw;
+  }
+  .para-cont p {
+    font-size: 4vw;
+  }
+  .video-cont video {
+    width: 50%;
+    height: 5vw;
+  }
+}
